@@ -1,0 +1,59 @@
+{
+  "name": "mapty",
+  "version": "1.0.0",
+  "description": "Aplicacion web sobre mapa y rutas para ejercicios",
+  "keywords": [
+    "Map",
+    "Mapping",
+    "Route",
+    "Cicle",
+    "Exercise"
+  ],
+  "homepage": "https://github.com/wjuma19dev2026-wq/mapty#readme",
+  "bugs": {
+    "url": "https://github.com/wjuma19dev2026-wq/mapty/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/wjuma19dev2026-wq/mapty.git"
+  },
+  "license": "MIT",
+  "author": "Wilson Juma",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack serve",
+    "build": "webpack",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,html}": "eslint --fix",
+    "*.{js,html,css,json,md}": "prettier --write"
+  },
+  "devDependencies": {
+    "@eslint/css": "^1.1.0",
+    "@eslint/js": "^10.0.1",
+    "css-loader": "^7.1.4",
+    "eslint": "^10.1.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.4.0",
+    "html-webpack-plugin": "^5.6.6",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "mini-css-extract-plugin": "^2.10.2",
+    "pug": "^2.0.4",
+    "pug-cli": "^1.0.0-alpha6",
+    "pug-loader": "^2.4.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.105.4",
+    "webpack-cli": "^7.0.2",
+    "webpack-dev-server": "^5.2.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1"
+  }
+}

@@ -1,0 +1,19 @@
+doctype
+html
+  head
+    title Mapty
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="description" content="Aplicación de mapas y rutas para ejercicios")
+    link(rel="stylesheet" href="./style.css")
+  body
+    h1 Mapty
+    if ENV === 'development'
+      p Modo desarrollo
+    else
+      p Modo producción
+    section
+      h3 Elige la ruta a navegar
+      article
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    script(src="./main.js")

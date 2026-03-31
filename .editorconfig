@@ -1,0 +1,38 @@
+# http://editorconfig.org
+root = true
+
+[*]
+# Fundamentos de consistencia
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Evita que el código se descontrole horizontalmente
+max_line_length = 100
+
+# --- Archivos de Configuración y Datos ---
+[*.{json,yaml,yml}]
+indent_size = 2
+
+# --- Frontend & Logic (JS/TS/HTML/CSS) ---
+[*.{js,ts,html,css,scss}]
+# quote_type y indent_size ya se heredan de [*]
+# El estilo de comillas lo controlan ESLint y Prettier
+
+# --- Documentación ---
+# En Markdown, los espacios al final a veces son necesarios para saltos de línea
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = off
+
+# --- Scripts de Shell (Para tus configuraciones de MX Linux) ---
+[*.sh]
+indent_size = 4
+indent_style = tab
+
+# --- Archivos de infraestructura (Docker, etc.) ---
+[{Dockerfile,Makefile}]
+indent_style = tab
