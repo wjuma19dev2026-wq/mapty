@@ -1,0 +1,186 @@
+/* ==================== SANITIZE.CSS ==================== */
+/* Document: Opinionated, cross-browser baseline */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(:root) {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background-color: var(--bg-body, #f8fafc);
+  color: var(--text-main, #272d38);
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: var(--text-base, 16px);
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  text-rendering: optimizeLegibility;
+}
+
+/* ==================== Margins ==================== */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ==================== Typography ==================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+
+/* ==================== Embedded Content ==================== */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* ==================== Forms ==================== */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+/* ==================== Interactive ==================== */
+
+details,
+menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+/* ==================== Scripting ==================== */
+
+canvas,
+audio,
+video {
+  display: inline-block;
+}
+
+/* ==================== Tables ==================== */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ==================== Misc ==================== */
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--border-color, #d2d9e6);
+  margin: var(--space-4, 1rem) 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+/* ==================== Accessibility ==================== */
+
+:where([hidden]:not([hidden='until-found'])) {
+  display: none !important;
+}
+
+:where([aria-busy='true']) {
+  cursor: progress;
+}
+
+:where([aria-disabled='true'], [disabled]) {
+  cursor: not-allowed;
+}
+
+:where(:focus-visible) {
+  outline: 2px solid var(--border-focus, #6280a3);
+  outline-offset: 2px;
+}
+
+:where(:focus:not(:focus-visible)) {
+  outline: none;
+}

@@ -26,7 +26,7 @@ export default [
       'eol-last': ['error', 'always'],
 
       'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-      'no-console': 'warn',
+      // 'no-console': 'warn',
       'prefer-const': 'error',
       eqeqeq: 'error',
       'no-var': 'error',

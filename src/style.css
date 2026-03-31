@@ -1,0 +1,103 @@
+:root {
+  /* ==================== PALETA ODHIN ==================== */
+
+  /* Primary (#6280A3) */
+  --color-primary: #6280a3;
+  --color-primary-hover: #4e6885;
+  --color-primary-active: #3d5269;
+  --color-primary-light: #eef3f7;
+  --color-primary-dark: #3a506b;
+
+  /* Secondary (#445459) */
+  --color-secondary: #445459;
+  --color-secondary-hover: #333f42;
+  --color-secondary-active: #222a2c;
+  --color-secondary-light: #e9ecee;
+  --color-secondary-dark: #1e2628;
+
+  /* Success (#8CB369) */
+  --color-success: #8cb369;
+  --color-success-hover: #729651;
+  --color-success-light: #f0f6eb;
+
+  /* Info (#A9DEF9) */
+  --color-info: #a9def9;
+  --color-info-hover: #85cbf5;
+  --color-info-light: #f5fbfe;
+  --color-info-text: #0c4a6e; /* Darker text for contrast on light info bg */
+
+  /* Warning (#E1C340) */
+  --color-warning: #e1c340;
+  --color-warning-hover: #c4a830;
+  --color-warning-light: #fdf9e8;
+  --color-warning-text: #713f12;
+
+  /* Danger (#BC4749) */
+  --color-danger: #bc4749;
+  --color-danger-hover: #9e3638;
+  --color-danger-light: #f8ecec;
+
+  /* Neutrals */
+  --color-light: #d2d9e6;
+  --color-dark: #272d38;
+
+  /* ==================== SEMÁNTICA DE UI ==================== */
+
+  /* Fondos y Superficies */
+  --bg-body: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-hover: #f1f5f9;
+  --bg-overlay: rgb(39 45 56 / 0.5);
+
+  /* Texto */
+  --text-main: #272d38; /* Dark */
+  --text-secondary: #445459; /* Secondary */
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+  --text-link: #6280a3; /* Primary */
+
+  /* Bordes */
+  --border-color: #d2d9e6; /* Light */
+  --border-focus: #6280a3;
+
+  /* ==================== TIPOGRAFÍA ==================== */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+  --font-melody: 'Hi Melody';
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+
+  /* ==================== ESPACIADO ==================== */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* ==================== BORDES Y SOMBRAS ==================== */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* ==================== TRANSICIONES ==================== */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
