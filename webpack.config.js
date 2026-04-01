@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url'
 import { readdirSync } from 'fs'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { config } from 'dotenv'
 
@@ -56,6 +57,8 @@ export default {
     port: 3000,
     open: true,
     hot: true,
+    liveReload: true,
+    watchFiles: ['src/**/*.pug', 'src/**/*.css', 'src/**/*.js'],
   },
   module: {
     rules: [
@@ -70,6 +73,19 @@ export default {
           },
         ],
       },
+      // ... tus reglas de pug y css ...
+      {
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash:8].[ext]',
+              outputPath: 'assets/images/',
+            },
+          },
+        ],
+      },
       {
         test: /\.css$/,
         use: [isProd ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader'],
@@ -78,6 +94,14 @@ export default {
   },
   plugins: [
     ...htmlPlugins,
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/assets',
+          to: 'assets/images',
+        },
+      ],
+    }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
     }),

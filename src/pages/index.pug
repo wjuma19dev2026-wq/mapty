@@ -1,13 +1,26 @@
 extends ../templates/layout.pug
 
+
 block content
-  .container
-    h1.hero Mapty
-    p.hero__subtitle Elige la ruta a navegar
-    section.rutas
-      article.ruta
-        h3 Ruta 1
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      article.ruta
-        h3 Ruta 2
-        p Sed do eiusmod tempor incididunt ut labore et dolore magna.
+  .right
+    .container
+      .row
+        .col-12.mapty__logo.mt-5
+          //- <a href="https://www.flaticon.com/free-icons/map" title="map icons">Map icons created by Pixel perfect - Flaticon</a>
+          img(src="./assets/images/map.png" alt="Mapty Logo" class="mapty__logo--image" )
+          h1.mapty__logo--text mapty
+        //- include ../templates/partials/footer.pug
+
+  .left
+    #map(class="col-12" style="height: 100%;")
+      //- Map will be rendered here
+
+
+
+
+
+
+
+
+
+

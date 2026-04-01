@@ -101,3 +101,28 @@
   --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+main {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  height: 100vh;
+}
+
+.right {
+  background-color: var(--color-primary);
+}
+.mapty__logo {
+  text-align: center;
+}
+.mapty__logo--image {
+  display: inline-block;
+  height: 30px;
+}
+.mapty__logo--text {
+  display: inline-block;
+  color: var(--color-warning);
+}
+
+.left {
+  background-color: #f1f1f1;
+}

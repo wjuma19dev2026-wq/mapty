@@ -497,4 +497,170 @@ export default {
 
 ---
 
+## 21. Paleta de colores Odhin en CSS
+
+**Pregunta:** Crear una paleta de colores tipo Bootstrap con los colores de la imagen `odhin_pallete_colors.png`.
+
+**Colores proporcionados:**
+
+| Función   | HEX       | Aplicación                       |
+| --------- | --------- | -------------------------------- |
+| Primary   | `#6280A3` | Botones principales, enlaces     |
+| Secondary | `#445459` | Elementos neutros                |
+| Success   | `#8CB369` | Confirmaciones, alertas de éxito |
+| Info      | `#A9DEF9` | Información técnica, banners     |
+| Warning   | `#E1C340` | Alertas de atención              |
+| Danger    | `#BC4749` | Errores, acciones críticas       |
+| Light     | `#D2D9E6` | Fondos de secciones, bordes      |
+| Dark      | `#272D38` | Texto principal, navbar          |
+
+**Implementado en `src/style.css`:**
+
+- Variables CSS con variantes `hover`, `active`, `light`
+- Variables semánticas para UI (`--bg-body`, `--text-main`, `--border-color`)
+- Tipografía, espaciado, sombras, transiciones
+
+---
+
+## 22. Reset CSS universal
+
+**Pregunta:** `*, *::after, *::before { margin: var(--space-1); padding: var(--space-1); }` ¿cómo debería ir con valores 0?
+
+**Respuesta:** El reset universal debe ser `0`:
+
+```css
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+```
+
+---
+
+## 23. Sanitize.css personalizado
+
+**Creado `src/sanitize.css`** con:
+
+- Box-sizing global
+- Márgenes reseteados en tipografía y listas
+- Imágenes/video responsivos
+- Forms heredan fuente del padre
+- Accesibilidad: `focus-visible`, `aria-busy`, `aria-disabled`
+- Variables CSS integradas con la paleta Odhin
+
+---
+
+## 24. Live Reload en Webpack Dev Server
+
+**Problema:** El servidor no tenía live reload para archivos Pug/CSS.
+
+**Solución en `webpack.config.js`:**
+
+```js
+devServer: {
+  liveReload: true,
+  watchFiles: ['src/**/*.pug', 'src/**/*.css', 'src/**/*.js'],
+}
+```
+
+---
+
+## 25. Layout System tipo Bootstrap
+
+**Creado `src/layout.css`** con:
+
+- Container responsive (5 breakpoints: 576px, 768px, 992px, 1200px, 1400px)
+- Grid system (`.row`, `.col`)
+- Columnas del 1 al 12
+- Responsive: `col-sm-*`, `col-md-*`, `col-lg-*`, `col-xl-*`
+- Offsets y Gutters
+
+---
+
+## 26. Utilities CSS tipo Bootstrap
+
+**Creado `src/utilities.css`** con:
+
+- **Spacing**: `m-*`, `mt-*`, `mb-*`, `mx-*`, `my-*` y `p-*` (0-6 + auto)
+- **Flexbox**: `d-flex`, `justify-content-*`, `align-items-*`, etc.
+- **Texto**: `text-center`, `text-primary`, `fw-bold`, etc.
+- **Backgrounds**: `bg-primary`, `bg-dark`, `bg-white`, etc.
+- **Responsive**: `d-sm-flex`, `d-md-none`, etc.
+
+**Orden de imports en `main.js`:**
+
+```js
+import './sanitize.css'
+import './layout.css'
+import './utilities.css'
+import './style.css'
+```
+
+---
+
+## 27. Footer siempre abajo (Sticky Footer)
+
+**Problema:** El footer no se quedaba abajo cuando había poco contenido.
+
+**Solución con Flexbox:**
+
+```css
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main.main {
+  flex: 1;
+}
+```
+
+---
+
+## 28. Imágenes en Webpack
+
+**Problema:** Las imágenes no se encontraban al usarlas en templates Pug.
+
+**Solución final con `copy-webpack-plugin`:**
+
+```bash
+npm install --save-dev copy-webpack-plugin
+```
+
+```js
+// webpack.config.js
+import CopyWebpackPlugin from 'copy-webpack-plugin'
+
+plugins: [
+  new CopyWebpackPlugin({
+    patterns: [{ from: 'src/assets', to: 'assets/images' }],
+  }),
+]
+```
+
+**Uso en Pug:**
+
+```pug
+img(src="./assets/images/map.png" alt="Logo")
+```
+
+**Nota:** `file-loader` y `pug-loader` no se llevan bien juntos. `copy-webpack-plugin` es más confiable para assets estáticos.
+
+---
+
+## Archivos CSS creados
+
+| Archivo             | Propósito                                     |
+| ------------------- | --------------------------------------------- |
+| `src/sanitize.css`  | Reset y baseline cross-browser                |
+| `src/layout.css`    | Container, Grid, Columnas responsive          |
+| `src/utilities.css` | Spacing, Flexbox, Texto, Colores              |
+| `src/style.css`     | Variables CSS (paleta Odhin) + estilos custom |
+
+---
+
 _Generado el 31 de marzo de 2026_
